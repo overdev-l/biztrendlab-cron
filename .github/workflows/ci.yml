@@ -1,0 +1,37 @@
+name: rss cron
+
+on:
+  schedule:
+    - cron: "0 8,20 * * *"
+  workflow_dispatch:
+
+jobs:
+  run-cron:
+    runs-on: ubuntu-latest
+
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      DEEPSEEK_API_MODEL: ${{ secrets.DEEPSEEK_API_MODEL }}
+      DEEPSEEK_API_URL: ${{ secrets.DEEPSEEK_API_URL }}
+      EMBEDDING_API_KEY: ${{ secrets.EMBEDDING_API_KEY }}
+      EMBEDDING_API_MODEL: ${{ secrets.EMBEDDING_API_MODEL }}
+      EMBEDDING_API_URL: ${{ secrets.EMBEDDING_API_URL }}
+      RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run cron task
+        run: |
+          echo "🚀 Scraping free API platforms..."
+          bun run scripts/cron-scraper.ts --source=reddit,hackernews,v2ex,github,linuxdo

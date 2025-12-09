@@ -1,0 +1,32 @@
+{
+  "name": "biztrendlab-cron",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "cron": "tsx scripts/cron-scraper.ts",
+    "cron:now": "tsx scripts/cron-scraper.ts --run-now",
+    "cron:list": "tsx scripts/cron-scraper.ts --list",
+    "providers:init": "tsx scripts/init-providers.ts init",
+    "providers:status": "tsx scripts/init-providers.ts status",
+    "providers:clear": "tsx scripts/init-providers.ts clear",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@upstash/redis": "^1.35.7",
+    "axios": "^1.13.2",
+    "cheerio": "^1.1.2",
+    "dotenv": "^17.2.3",
+    "drizzle-orm": "^0.44.7",
+    "jsonrepair": "^3.13.1",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.26",
+    "@types/pg": "^8.15.6",
+    "drizzle-kit": "^0.31.8",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

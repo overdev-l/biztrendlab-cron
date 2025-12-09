@@ -1,0 +1,62 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1763644221281,
+      "tag": "0000_left_psylocke",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1763900000000,
+      "tag": "0001_add_billing",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1763900500000,
+      "tag": "0002_add_subscription_quota",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1763999954253,
+      "tag": "0003_glamorous_onslaught",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1764100000000,
+      "tag": "0004_add_email_preferences",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1764069303717,
+      "tag": "0005_mushy_jasper_sitwell",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1764146662193,
+      "tag": "0006_shallow_vampiro",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1764149854451,
+      "tag": "0007_new_changeling",
+      "breakpoints": true
+    }
+  ]
+}

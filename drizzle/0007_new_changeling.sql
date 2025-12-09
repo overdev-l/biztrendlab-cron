@@ -1,0 +1,1 @@
+ALTER TABLE "subscriptions" ADD COLUMN "ai_max_tokens" integer DEFAULT 1024 NOT NULL;
