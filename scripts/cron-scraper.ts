@@ -52,15 +52,16 @@ const SCRAPER_CONFIGS: Record<SourceName, {
   reddit: {
     scraper: () => new RedditScraper(),
     options: {
-      useTopSubreddits: true, // 使用 Top 热门子版面列表
-      limit: 500,
+      // 使用精选的商业/科技相关子版面（约 100 个）
+      categories: ['business', 'tech', 'ai', 'product'] as const,
+      limit: 300,
       sort: 'top' as const,
       timeFilter: 'week' as const,
       minScore: 10,
       minComments: 30, // 评论数 > 30
-      batchSize: 10,
-      batchDelay: 2000,
-      concurrency: 2,
+      batchSize: 15,
+      batchDelay: 1500,
+      concurrency: 3,
     },
     recommendedInterval: '每4小时 (0 */4 * * *)'
   },
