@@ -34,4 +34,4 @@ jobs:
       - name: Run cron task
         run: |
           echo "🚀 Scraping free API platforms..."
-          bun run scripts/cron-scraper.ts --source=reddit,hackernews,v2ex,github,linuxdo
+          bun run scripts/cron-scraper.ts --source=reddit

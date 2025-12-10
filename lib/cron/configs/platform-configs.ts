@@ -41,12 +41,15 @@ export const PLATFORM_CONFIGS: Record<SourceName, PlatformConfig> = {
     name: 'Reddit',
     scraper: () => new RedditScraper() as BaseScraper,
     options: {
-      subreddit: ['startups', 'SaaS', 'Entrepreneur', 'SideProject', 'indiehackers', 'business'],
-      limit: 100,
+      useTopSubreddits: true, // 使用 Top 热门子版面列表
+      limit: 500,
       sort: 'top' as const,
       timeFilter: 'week' as const,
-      minScore: 15,
-      minComments: 5,
+      minScore: 10,
+      minComments: 30, // 评论数 > 30
+      batchSize: 10,
+      batchDelay: 2000,
+      concurrency: 2,
     },
     recommendedInterval: '每4小时 (0 */4 * * *)',
     hasProviderManager: false,
